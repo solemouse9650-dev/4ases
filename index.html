@@ -1,0 +1,1370 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Los 4 Ases - Historia y Legado Musical</title>
+    <meta name="description" content="Descubre la historia de Los 4 Ases, el grupo musical que ha marcado generaciones en Misiones. Reserva actuaciones y visita nuestro museo.">
+    <meta name="keywords" content="Los 4 Ases, música, Apóstoles, Misiones, grupo musical, chamamé, folklore">
+    <meta name="author" content="Los 4 Ases">
+    <meta property="og:title" content="Los 4 Ases - Historia y Legado Musical">
+    <meta property="og:description" content="Descubre la historia de Los 4 Ases, el grupo musical que ha marcado generaciones.">
+    <meta property="og:type" content="website">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Lora:wght@400;500;600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-gold: #d4a574;
+            --primary-dark: #1a1a1a;
+            --primary-cream: #f5f1ed;
+            --accent-burgundy: #6b3e3e;
+            --accent-green: #4a5f3f;
+            --text-dark: #2c2c2c;
+            --text-light: #f5f1ed;
+            --border-light: #e8e3dd;
+            --shadow-sm: 0 2px 8px rgba(0,0,0,0.08);
+            --shadow-md: 0 8px 24px rgba(0,0,0,0.12);
+            --shadow-lg: 0 16px 40px rgba(0,0,0,0.15);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Lora', serif;
+            color: var(--text-dark);
+            background-color: var(--primary-cream);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* ==================== PAGE VISIBILITY ==================== */
+        .page {
+            display: none;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        /* ==================== HEADER ==================== */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(26, 26, 26, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 2rem;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .header-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: var(--primary-gold);
+            text-decoration: none;
+            letter-spacing: -1px;
+            cursor: pointer;
+        }
+
+        nav a, nav button {
+            color: var(--text-light);
+            text-decoration: none;
+            margin-left: 2.5rem;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-family: inherit;
+        }
+
+        nav a::after, nav button::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-gold);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after, nav button:hover::after {
+            width: 100%;
+        }
+
+        nav a:hover, nav button:hover {
+            color: var(--primary-gold);
+        }
+
+        .nav-museum {
+            background: var(--primary-gold);
+            color: var(--primary-dark);
+            padding: 0.6rem 1.5rem;
+            border-radius: 50px;
+            margin-left: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .nav-museum:hover {
+            background: #e8b887;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        /* ==================== HERO SECTION ==================== */
+        .hero {
+            margin-top: 60px;
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, rgba(107, 62, 62, 0.7) 0%, rgba(26, 26, 26, 0.7) 100%), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><defs><linearGradient id="grad1" x1="0%25" y1="0%25" x2="100%25" y2="100%25"><stop offset="0%25" style="stop-color:rgb(107,62,62);stop-opacity:0.3" /><stop offset="100%25" style="stop-color:rgb(26,26,26);stop-opacity:0.3" /></linearGradient></defs><rect width="1200" height="800" fill="url(%23grad1)"/><circle cx="100" cy="100" r="80" fill="rgba(212,165,116,0.1)"/><circle cx="1100" cy="700" r="120" fill="rgba(212,165,116,0.08)"/></svg>');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><pattern id="dots" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse"><circle cx="20" cy="20" r="2" fill="rgba(212,165,116,0.1)"/></pattern></defs><rect width="1200" height="600" fill="url(%23dots)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            color: var(--text-light);
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(3rem, 8vw, 5.5rem);
+            font-weight: 900;
+            margin-bottom: 1rem;
+            letter-spacing: -2px;
+            color: var(--primary-gold);
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: clamp(1rem, 2vw, 1.3rem);
+            font-weight: 300;
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.95;
+            font-family: 'Lora', serif;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.9rem 2.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            font-family: 'Inter', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-primary {
+            background: var(--primary-gold);
+            color: var(--primary-dark);
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-primary:hover {
+            background: #e8b887;
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary-gold);
+            border: 2px solid var(--primary-gold);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary-gold);
+            color: var(--primary-dark);
+            transform: translateY(-3px);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ==================== SCROLL INDICATOR ==================== */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+        }
+
+        .scroll-indicator svg {
+            width: 24px;
+            height: 24px;
+            stroke: var(--primary-gold);
+            fill: none;
+            stroke-width: 2;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(10px); }
+        }
+
+        /* ==================== SECTIONS ==================== */
+        section {
+            padding: 5rem 2rem;
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 900;
+            margin-bottom: 1rem;
+            color: var(--primary-dark);
+            text-align: center;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--accent-burgundy);
+            text-align: center;
+            margin-bottom: 3rem;
+            font-weight: 500;
+        }
+
+        /* ==================== INTRODUCCIÓN ==================== */
+        .intro-section {
+            background: var(--primary-cream);
+        }
+
+        .intro-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .intro-text h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-dark);
+        }
+
+        .intro-text p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+        }
+
+        .intro-image {
+            width: 100%;
+            height: 400px;
+            border-radius: 12px;
+            box-shadow: var(--shadow-lg);
+            object-fit: cover;
+        }
+
+        /* ==================== HISTORIA SECTION ==================== */
+        .historia-section {
+            background: white;
+        }
+
+        .historia-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .historia-card {
+            background: var(--primary-cream);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+            border-left: 4px solid var(--primary-gold);
+        }
+
+        .historia-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .historia-card h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-dark);
+        }
+
+        .historia-card p {
+            font-size: 0.95rem;
+            line-height: 1.7;
+            color: var(--text-dark);
+        }
+
+        /* ==================== GALERÍA SLIDER ==================== */
+        .gallery-container {
+            position: relative;
+            margin-top: 3rem;
+        }
+
+        .gallery-slider {
+            display: flex;
+            gap: 1.5rem;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            padding: 1rem 0;
+            scroll-snap-type: x mandatory;
+        }
+
+        .gallery-slider::-webkit-scrollbar {
+            height: 6px;
+        }
+
+        .gallery-slider::-webkit-scrollbar-track {
+            background: var(--border-light);
+            border-radius: 10px;
+        }
+
+        .gallery-slider::-webkit-scrollbar-thumb {
+            background: var(--primary-gold);
+            border-radius: 10px;
+        }
+
+        .gallery-item {
+            flex: 0 0 300px;
+            height: 250px;
+            border-radius: 12px;
+            box-shadow: var(--shadow-md);
+            scroll-snap-align: start;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-light);
+            font-weight: 500;
+            transition: transform 0.3s ease;
+            object-fit: cover;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+
+        .gallery-controls {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .gallery-btn {
+            width: 45px;
+            height: 45px;
+            border: 2px solid var(--primary-gold);
+            background: white;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            color: var(--primary-gold);
+        }
+
+        .gallery-btn:hover {
+            background: var(--primary-gold);
+            color: var(--primary-dark);
+        }
+
+        /* ==================== VIDA SECTION ==================== */
+        .vida-section {
+            background: white;
+        }
+
+        .vida-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .vida-image {
+            width: 100%;
+            height: 400px;
+            border-radius: 12px;
+            box-shadow: var(--shadow-lg);
+            object-fit: cover;
+        }
+
+        .vida-text h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-dark);
+        }
+
+        .vida-text p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+        }
+
+        /* ==================== RESERVA SECTION ==================== */
+        .reserva-section {
+            background: var(--primary-cream);
+        }
+
+        .reserva-form {
+            background: white;
+            padding: 3rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-lg);
+            max-width: 600px;
+            margin: 3rem auto 0;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--primary-dark);
+            font-family: 'Inter', sans-serif;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid var(--border-light);
+            border-radius: 8px;
+            font-family: 'Lora', serif;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-gold);
+            box-shadow: 0 0 0 3px rgba(212, 165, 116, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .reserva-form .btn-primary {
+            width: 100%;
+            margin-top: 1rem;
+        }
+
+        .whatsapp-info {
+            text-align: center;
+            margin-top: 1.5rem;
+            padding: 1rem;
+            background: #e8f5e9;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            color: var(--accent-green);
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* ==================== MUSEO SECTION ==================== */
+        .museo-section {
+            color: var(--text-light);
+            text-align: center;
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, var(--accent-burgundy) 0%, var(--primary-dark) 100%);
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .museo-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(26, 26, 26, 0.4);
+            z-index: 1;
+        }
+
+        .museo-section > * {
+            position: relative;
+            z-index: 2;
+        }
+
+        .museo-section .section-title {
+            color: var(--primary-gold);
+            margin-bottom: 1.5rem;
+        }
+
+        .museo-section p {
+            font-size: 1.1rem;
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.95;
+        }
+
+        .museo-section .btn-primary {
+            margin-top: 1rem;
+        }
+
+        /* ==================== COLECCIONES SECTION ==================== */
+        .colecciones-section {
+            background: var(--primary-cream);
+        }
+
+        .colecciones-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .coleccion-item {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s ease;
+        }
+
+        .coleccion-item:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .coleccion-image {
+            width: 100%;
+            height: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-light);
+            font-size: 3rem;
+            font-weight: 500;
+            object-fit: cover;
+        }
+
+        .coleccion-content {
+            padding: 1.5rem;
+        }
+
+        .coleccion-content h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+            color: var(--primary-dark);
+        }
+
+        .coleccion-content p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: var(--text-dark);
+        }
+
+        /* ==================== VISITA SECTION ==================== */
+        .visita-section {
+            background: white;
+        }
+
+        .visita-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .visita-info h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-dark);
+        }
+
+        .visita-info p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+        }
+
+        .visita-details {
+            background: var(--primary-cream);
+            padding: 2rem;
+            border-radius: 12px;
+            border-left: 4px solid var(--primary-gold);
+        }
+
+        .visita-details h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--primary-dark);
+        }
+
+        .detail-item {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .detail-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .detail-label {
+            font-weight: 600;
+            color: var(--accent-burgundy);
+            margin-bottom: 0.3rem;
+        }
+
+        .detail-value {
+            color: var(--text-dark);
+            font-size: 1rem;
+        }
+
+        .visita-image {
+            width: 100%;
+            height: 400px;
+            border-radius: 12px;
+            box-shadow: var(--shadow-lg);
+            object-fit: cover;
+        }
+
+        /* ==================== CONTACTO SECTION ==================== */
+        .contacto-section {
+            background: var(--primary-cream);
+        }
+
+        .contacto-form {
+            background: white;
+            padding: 3rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-lg);
+            max-width: 600px;
+            margin: 3rem auto 0;
+        }
+
+        /* ==================== FOOTER ==================== */
+        footer {
+            background: var(--primary-dark);
+            color: var(--text-light);
+            padding: 3rem 2rem;
+            text-align: center;
+            border-top: 1px solid var(--border-light);
+        }
+
+        footer p {
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a, .footer-links button {
+            color: var(--primary-gold);
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-family: inherit;
+        }
+
+        .footer-links a:hover, .footer-links button:hover {
+            opacity: 0.8;
+        }
+
+        /* ==================== RESPONSIVE ==================== */
+        @media (max-width: 768px) {
+            header {
+                padding: 1rem;
+            }
+
+            .header-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            nav {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+                width: 100%;
+            }
+
+            nav a, nav button {
+                margin-left: 0;
+                text-align: center;
+            }
+
+            .nav-museum {
+                margin-left: 0;
+            }
+
+            section {
+                padding: 3rem 1.5rem;
+            }
+
+            .intro-content,
+            .vida-content,
+            .visita-content {
+                grid-template-columns: 1fr;
+            }
+
+            .intro-image,
+            .vida-image,
+            .visita-image {
+                height: 300px;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .reserva-form,
+            .contacto-form {
+                padding: 2rem 1.5rem;
+            }
+
+            .gallery-item {
+                flex: 0 0 250px;
+                height: 200px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 1.4rem;
+            }
+
+            nav a, nav button {
+                font-size: 0.85rem;
+                margin-left: 0;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .historia-grid,
+            .colecciones-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-item {
+                flex: 0 0 200px;
+                height: 180px;
+            }
+
+            .reserva-form,
+            .contacto-form {
+                padding: 1.5rem;
+            }
+
+            .museo-section {
+                padding: 4rem 1.5rem;
+            }
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <!-- ==================== PAGE 1: INICIO ==================== -->
+    <div id="page-inicio" class="page active">
+        <!-- ==================== HEADER ==================== -->
+        <header>
+            <div class="header-container">
+                <a onclick="showPage('page-inicio')" class="logo">Los 4 Ases</a>
+                <nav>
+                    <a href="#historia">Historia</a>
+                    <a href="#vida">Legado</a>
+                    <a href="#reserva">Reservar</a>
+                    <button onclick="showPage('page-museo')" class="nav-museum">Museo</button>
+                </nav>
+            </div>
+        </header>
+
+        <!-- ==================== HERO SECTION ==================== -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Los 4 Ases</h1>
+                <p>Historia, música y legado que trasciende generaciones</p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary" onclick="document.getElementById('historia').scrollIntoView({behavior: 'smooth'})">Explorar Historia</button>
+                    <a href="#reserva" class="btn btn-secondary">Reservar Actuación</a>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <svg viewBox="0 0 24 24">
+                    <path d="M12 5v14m0 0l-7-7m7 7l7-7"/>
+                </svg>
+            </div>
+        </section>
+
+        <!-- ==================== INTRODUCCIÓN ==================== -->
+        <section class="intro-section">
+            <h2 class="section-title">Bienvenido a Los 4 Ases</h2>
+            <p class="section-subtitle">Más de 50 años de tradición musical</p>
+            <div class="intro-content">
+                <div class="intro-text">
+                    <h3>Un legado musical inmortal</h3>
+                    <p>Los 4 Ases es más que un grupo musical. Es la voz de Apóstoles, la identidad sonora de Misiones y el puente entre generaciones. Desde sus inicios, han llevado la música tradicional y alegre de la región a cada rincón, creando momentos inolvidables en bailes, celebraciones y encuentros familiares.</p>
+                    <p>Con Rulo Grabovieski a la cabeza, el grupo ha mantenido viva la esencia del chamamé y el folklore misionero, demostrando que la verdadera música no tiene edad ni límites.</p>
+                </div>
+                <img src="img orquesta.jpg" alt="Los 4 Ases - Grupo Musical" class="intro-image">
+            </div>
+        </section>
+
+        <!-- ==================== HISTORIA SECTION ==================== -->
+        <section class="historia-section" id="historia">
+            <h2 class="section-title">La Historia de Los 4 Ases</h2>
+            <p class="section-subtitle">Conoce cómo surgió esta leyenda musical</p>
+            
+            <div class="historia-grid">
+                <div class="historia-card">
+                    <h4>🎵 Los Comienzos</h4>
+                    <p>Todo comenzó con la pasión por la música tradicional. Un grupo de músicos decidió unirse para compartir los ritmos más auténticos de la región, llevando la alegría del chamamé a cada actuación.</p>
+                </div>
+                <div class="historia-card">
+                    <h4>🎶 Evolución Musical</h4>
+                    <p>A lo largo de los años, Los 4 Ases perfeccionaron su estilo, fusionando tradición con innovación. Su sonoridad característica se convirtió en sinónimo de calidad y autenticidad musical.</p>
+                </div>
+                <div class="historia-card">
+                    <h4>🏆 Reconocimiento</h4>
+                    <p>Su dedicación y talento los llevaron a ser reconocidos como referentes culturales de Misiones. Cada actuación es un testimonio de su compromiso con la música y la comunidad.</p>
+                </div>
+                <div class="historia-card">
+                    <h4>💫 Legado Eterno</h4>
+                    <p>Hoy, Los 4 Ases continúan escribiendo su historia, inspirando a nuevas generaciones y manteniendo viva la esencia musical que define a Apóstoles y toda la provincia.</p>
+                </div>
+            </div>
+
+            <h3 style="text-align: center; margin-top: 4rem; margin-bottom: 2rem; font-family: 'Playfair Display', serif; font-size: 2rem;">Galería de Momentos</h3>
+            <div class="gallery-container">
+                <div class="gallery-slider" id="gallerySlider">
+                    <img src="museo 22.jpg" alt="Galería - Foto museo de los 4 ases 1" class="gallery-item">
+                    <img src="imgmuseoeoeo.jpeg" alt="Galería - Foto museo de los 4 ases 2" class="gallery-item">
+                    <img src="img museoo.jpg" alt="Galería - Foto museo de los 4 ases 3" class="gallery-item">
+                    <img src="museo33.jpg" alt="Galería - Foto museo de los 4 ases 4" class="gallery-item">
+                    <img src="museo img.jpeg" alt="Galería - Foto museo de los 4 ases 5" class="gallery-item">
+                </div>
+                <div class="gallery-controls">
+                    <button class="gallery-btn" onclick="scrollGallery(-1)">❮</button>
+                    <button class="gallery-btn" onclick="scrollGallery(1)">❯</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== VIDA SECTION ==================== -->
+        <section class="vida-section" id="vida">
+            <h2 class="section-title">Descubre la Vida de Los 4 Ases</h2>
+            <p class="section-subtitle">Historias que trascienden generaciones</p>
+            
+            <div class="vida-content">
+                <img src="img orquesta.jpg" alt="Los 4 Ases en Acción" class="vida-image">
+                <div class="vida-text">
+                    <h3>Más que música, es emoción</h3>
+                    <p>Cada nota que toca Los 4 Ases lleva consigo historias de amor, celebraciones familiares y momentos que han marcado la vida de miles de personas en Misiones.</p>
+                    <p>Desde los bailes tradicionales hasta las presentaciones en eventos especiales, el grupo ha sido testigo y protagonista de los momentos más importantes de la comunidad misionera.</p>
+                    <p>Su música es un puente entre el pasado y el presente, un recordatorio de nuestras raíces y un regalo para las futuras generaciones que descubrirán la magia de Los 4 Ases.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== RESERVA SECTION ==================== -->
+        <section class="reserva-section" id="reserva">
+            <h2 class="section-title">Reserva una Actuación</h2>
+            <p class="section-subtitle">Contrata a Los 4 Ases para tu evento especial</p>
+            
+            <form class="reserva-form" onsubmit="enviarPorWhatsApp(event)">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="nombre">Nombre y Apellido *</label>
+                        <input type="text" id="nombre" name="nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="telefono">Teléfono *</label>
+                        <input type="tel" id="telefono" name="telefono" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="fecha">Fecha de Actuación *</label>
+                        <input type="date" id="fecha" name="fecha" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="hora">Hora de Actuación *</label>
+                        <input type="time" id="hora" name="hora" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="tipo">Tipo de Actuación *</label>
+                    <select id="tipo" name="tipo" required>
+                        <option value="">Selecciona una opción</option>
+                        <option value="Individual">Individual</option>
+                        <option value="Con orquesta">Con orquesta</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="comentarios">Comentarios Adicionales</label>
+                    <textarea id="comentarios" name="comentarios" placeholder="Cuéntanos más sobre tu evento..."></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Enviar por WhatsApp</button>
+                
+                <div class="whatsapp-info">
+                    📱 Tu solicitud será enviada directamente a nuestro WhatsApp para confirmar disponibilidad
+                </div>
+            </form>
+        </section>
+
+        <!-- ==================== MUSEO SECTION ==================== -->
+        <section class="museo-section">
+            <h2 class="section-title">Museo de Los 4 Ases</h2>
+            <p>Visita nuestro museo en Apóstoles y descubre la historia completa, los instrumentos históricos, fotografías y memorabilia que cuentan la trayectoria de este grupo legendario.</p>
+            <button onclick="showPage('page-museo')" class="btn btn-primary">Visitar Museo</button>
+        </section>
+
+        <!-- ==================== FOOTER ==================== -->
+        <footer>
+            <p>&copy; 2026 Los 4 Ases - Todos los derechos reservados</p>
+            <p>Apóstoles, Misiones - Argentina</p>
+            <div class="footer-links">
+                <a href="#historia">Historia</a>
+                <a href="#reserva">Reservar</a>
+                <button onclick="showPage('page-museo')">Museo</button>
+                <a href="mailto:contacto@los4ases.com">Contacto</a>
+            </div>
+        </footer>
+    </div>
+
+    <!-- ==================== PAGE 2: MUSEO ==================== -->
+    <div id="page-museo" class="page">
+        <!-- ==================== HEADER ==================== -->
+        <header>
+            <div class="header-container">
+                <a onclick="showPage('page-inicio')" class="logo">Los 4 Ases</a>
+                <nav>
+                    <a href="#museo-historia">Historia</a>
+                    <a href="#colecciones">Colecciones</a>
+                    <a href="#visita">Visita</a>
+                    <button onclick="showPage('page-inicio')" class="nav-museum">Inicio</button>
+                </nav>
+            </div>
+        </header>
+
+        <!-- ==================== HERO SECTION ==================== -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Museo de Los 4 Ases</h1>
+                <p>Descubre el legado cultural de Apóstoles</p>
+            </div>
+        </section>
+
+        <!-- ==================== INTRODUCCIÓN ==================== -->
+        <section class="intro-section">
+            <h2 class="section-title">Bienvenido al Museo</h2>
+            <p class="section-subtitle">Un espacio dedicado a la historia musical de Los 4 Ases</p>
+            <div class="intro-content">
+                <div class="intro-text">
+                    <h3>La Casa de la Memoria Musical</h3>
+                    <p>El Museo de Los 4 Ases es un espacio único en Apóstoles dedicado a preservar y compartir la historia de este grupo legendario. Aquí encontrarás instrumentos históricos, fotografías, documentos y memorabilia que cuentan la trayectoria de más de 50 años de dedicación a la música.</p>
+                    <p>Cada objeto en nuestro museo tiene una historia que contar, cada fotografía captura un momento especial, y cada instrumento ha sido testigo de la evolución musical del grupo y de la comunidad misionera.</p>
+                </div>
+                <img src="museo44.jpg" alt="Entrada del Museo" class="intro-image">
+            </div>
+        </section>
+
+        <!-- ==================== HISTORIA SECTION ==================== -->
+        <section class="historia-section" id="museo-historia">
+            <h2 class="section-title">La Historia del Museo</h2>
+            <p class="section-subtitle">Cómo nació este espacio cultural</p>
+            
+            <div class="historia-grid">
+                <div class="historia-card">
+                    <h4>🏛️ Fundación</h4>
+                    <p>El museo fue creado con la visión de preservar el legado cultural de Los 4 Ases y compartirlo con las nuevas generaciones, consolidando el patrimonio musical de Apóstoles.</p>
+                </div>
+                <div class="historia-card">
+                    <h4>📚 Preservación</h4>
+                    <p>Nuestro compromiso es mantener viva la memoria de cada momento importante, cada actuación memorable y cada contribución del grupo a la identidad cultural misionera.</p>
+                </div>
+                <div class="historia-card">
+                    <h4>🎓 Educación</h4>
+                    <p>El museo funciona como un centro educativo donde visitantes de todas las edades pueden aprender sobre la música tradicional, el folklore y la historia local.</p>
+                </div>
+                <div class="historia-card">
+                    <h4>🌟 Comunidad</h4>
+                    <p>Es un espacio de encuentro y celebración de la identidad cultural misionera, donde la comunidad se reúne para recordar, aprender y compartir historias.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== COLECCIONES SECTION ==================== -->
+        <section class="colecciones-section" id="colecciones">
+            <h2 class="section-title">Nuestras Colecciones</h2>
+            <p class="section-subtitle">Descubre los tesoros del museo</p>
+            
+            <div class="colecciones-grid">
+                <div class="coleccion-item">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 250'%3E%3Cdefs%3E%3ClinearGradient id='c1' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:rgb(212,165,116);stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:rgb(107,62,62);stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='300' height='250' fill='url(%23c1)'/%3E%3Ctext x='150' y='125' font-family='Arial, sans-serif' font-size='48' text-anchor='middle' fill='white' opacity='0.6'%3E🎸%3C/text%3E%3C/svg%3E" alt="Instrumentos Históricos" class="coleccion-image">
+                    <div class="coleccion-content">
+                        <h4>Instrumentos Históricos</h4>
+                        <p>Instrumentos originales utilizados por Los 4 Ases a lo largo de su trayectoria, incluyendo acordeones, guitarras y otros instrumentos tradicionales.</p>
+                    </div>
+                </div>
+
+                <div class="coleccion-item">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 250'%3E%3Cdefs%3E%3ClinearGradient id='c2' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:rgb(107,62,62);stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:rgb(74,95,63);stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='300' height='250' fill='url(%23c2)'/%3E%3Ctext x='150' y='125' font-family='Arial, sans-serif' font-size='48' text-anchor='middle' fill='white' opacity='0.6'%3E📷%3C/text%3E%3C/svg%3E" alt="Fotografías y Documentos" class="coleccion-image">
+                    <div class="coleccion-content">
+                        <h4>Fotografías y Documentos</h4>
+                        <p>Una amplia colección de fotografías que documentan actuaciones, eventos especiales y momentos importantes de la historia del grupo.</p>
+                    </div>
+                </div>
+
+                <div class="coleccion-item">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 250'%3E%3Cdefs%3E%3ClinearGradient id='c3' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:rgb(74,95,63);stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:rgb(212,165,116);stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='300' height='250' fill='url(%23c3)'/%3E%3Ctext x='150' y='125' font-family='Arial, sans-serif' font-size='48' text-anchor='middle' fill='white' opacity='0.6'%3E🎵%3C/text%3E%3C/svg%3E" alt="Grabaciones Históricas" class="coleccion-image">
+                    <div class="coleccion-content">
+                        <h4>Grabaciones Históricas</h4>
+                        <p>Grabaciones de audio de algunas de las actuaciones más memorables y canciones icónicas de Los 4 Ases a través de los años.</p>
+                    </div>
+                </div>
+
+                <div class="coleccion-item">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 250'%3E%3Cdefs%3E%3ClinearGradient id='c4' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:rgb(26,26,26);stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:rgb(212,165,116);stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='300' height='250' fill='url(%23c4)'/%3E%3Ctext x='150' y='125' font-family='Arial, sans-serif' font-size='48' text-anchor='middle' fill='white' opacity='0.6'%3E🏆%3C/text%3E%3C/svg%3E" alt="Reconocimientos" class="coleccion-image">
+                    <div class="coleccion-content">
+                        <h4>Reconocimientos</h4>
+                        <p>Premios, distinciones y reconocimientos recibidos por el grupo de parte de instituciones culturales y la comunidad.</p>
+                    </div>
+                </div>
+
+                <div class="coleccion-item">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 250'%3E%3Cdefs%3E%3ClinearGradient id='c5' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:rgb(212,165,116);stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:rgb(74,95,63);stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='300' height='250' fill='url(%23c5)'/%3E%3Ctext x='150' y='125' font-family='Arial, sans-serif' font-size='48' text-anchor='middle' fill='white' opacity='0.6'%3E📰%3C/text%3E%3C/svg%3E" alt="Artículos de Prensa" class="coleccion-image">
+                    <div class="coleccion-content">
+                        <h4>Artículos de Prensa</h4>
+                        <p>Recortes de periódicos y artículos que documentan la trayectoria y el impacto cultural del grupo en Misiones.</p>
+                    </div>
+                </div>
+
+                <div class="coleccion-item">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 250'%3E%3Cdefs%3E%3ClinearGradient id='c6' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:rgb(107,62,62);stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:rgb(212,165,116);stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='300' height='250' fill='url(%23c6)'/%3E%3Ctext x='150' y='125' font-family='Arial, sans-serif' font-size='48' text-anchor='middle' fill='white' opacity='0.6'%3E✨%3C/text%3E%3C/svg%3E" alt="Memorabilia" class="coleccion-image">
+                    <div class="coleccion-content">
+                        <h4>Memorabilia</h4>
+                        <p>Objetos especiales, souvenirs y recuerdos que representan momentos significativos en la historia de Los 4 Ases.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== VISITA SECTION ==================== -->
+        <section class="visita-section" id="visita">
+            <h2 class="section-title">Planifica tu Visita</h2>
+            <p class="section-subtitle">Información práctica para visitantes</p>
+            
+            <div class="visita-content">
+                <div class="visita-info">
+                    <h3>Información de Visita</h3>
+                    <p>Ven a conocer el Museo de Los 4 Ases y sumergirte en la historia musical de Apóstoles. Nuestro equipo estará encantado de mostrarte cada rincón del museo y compartir las historias detrás de cada pieza de nuestra colección.</p>
+                    <p>El museo ofrece una experiencia única para familias, grupos escolares, turistas y amantes de la música tradicional. Cada visita es una oportunidad de conectar con nuestro patrimonio cultural.</p>
+                </div>
+                <div class="visita-details">
+                    <h4>Detalles de Visita</h4>
+                    <div class="detail-item">
+                        <div class="detail-label">📍 Ubicación</div>
+                        <div class="detail-value">Apóstoles, Misiones, Argentina</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">🕐 Horarios</div>
+                        <div class="detail-value">Martes a Domingo: 10:00 - 18:00 hs<br>Lunes: Cerrado</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">💰 Entrada</div>
+                        <div class="detail-value">Consultar precios especiales para grupos</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">📞 Contacto</div>
+                        <div class="detail-value">Teléfono: +54 3758 502801<br>WhatsApp disponible</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">👥 Visitas Guiadas</div>
+                        <div class="detail-value">Disponibles con reserva previa</div>
+                    </div>
+                </div>
+            </div>
+            <img src="imgmuseo99.jpeg" alt="Interior del Museo" class="visita-image" style="margin-top: 3rem;">
+        </section>
+
+        <!-- ==================== CONTACTO SECTION ==================== -->
+        <section class="contacto-section">
+            <h2 class="section-title">Reserva tu Visita</h2>
+            <p class="section-subtitle">Completa el formulario y nos contactaremos por WhatsApp para confirmar</p>
+            
+            <form class="contacto-form" onsubmit="enviarReservaMuseo(event)">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="nombre-museo">Nombre y Apellido *</label>
+                        <input type="text" id="nombre-museo" name="nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="telefono-museo">Teléfono *</label>
+                        <input type="tel" id="telefono-museo" name="telefono" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="fecha-museo">Fecha de Visita *</label>
+                        <input type="date" id="fecha-museo" name="fecha" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="hora-museo">Hora Preferida *</label>
+                        <input type="time" id="hora-museo" name="hora" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="cantidad-museo">Cantidad de Personas *</label>
+                    <input type="number" id="cantidad-museo" name="cantidad" min="1" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="comentarios-museo">Comentarios o Solicitudes Especiales</label>
+                    <textarea id="comentarios-museo" name="comentarios" placeholder="Cuéntanos si necesitas visita guiada u otra información..."></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Reservar por WhatsApp</button>
+                
+                <div class="whatsapp-info">
+                    📱 Tu solicitud de reserva será enviada directamente a nuestro WhatsApp para confirmar disponibilidad
+                </div>
+            </form>
+
+            <div style="text-align: center; margin-top: 2rem;">
+                <p style="font-size: 1.05rem; margin-bottom: 1rem;">O contactarnos directamente:</p>
+                <p style="font-size: 1rem; margin-bottom: 0.5rem;">📞 Teléfono: <strong>+54 3758 502801</strong></p>
+                <a href="https://wa.me/3758649299" target="_blank" class="btn btn-primary">
+    💬 Enviar WhatsApp
+</a>
+<a href="https://www.instagram.com/rulo_grabovieski/" target="_blank" class="btn btn-primary">
+    Instagram
+</a>
+<a href="https://www.facebook.com/rulo.grabovieski/" target="_blank" class="btn btn-primary">
+    Facebook
+</a>
+
+            </div>
+        </section>
+
+        <!-- ==================== FOOTER ==================== -->
+        <footer>
+            <p>&copy; 2026 Museo de Los 4 Ases - Todos los derechos reservados</p>
+            <p>Apóstoles, Misiones - Argentina</p>
+            <div class="footer-links">
+                <button onclick="showPage('page-inicio')">Inicio</button>
+                <a href="#museo-historia">Historia</a>
+                <a href="#colecciones">Colecciones</a>
+                <a href="#visita">Visita</a>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Page Navigation
+        function showPage(pageId) {
+            // Hide all pages
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.remove('active');
+            });
+            
+            // Show selected page
+            document.getElementById(pageId).classList.add('active');
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+
+        // Gallery Slider Function
+        function scrollGallery(direction) {
+            const slider = document.getElementById('gallerySlider');
+            const scrollAmount = 320; // Item width + gap
+            slider.scrollBy({
+                left: direction * scrollAmount,
+                behavior: 'smooth'
+            });
+        }
+
+        // WhatsApp Integration for Actuaciones
+        function enviarPorWhatsApp(event) {
+            event.preventDefault();
+
+            const nombre = document.getElementById('nombre').value;
+            const telefono = document.getElementById('telefono').value;
+            const fecha = document.getElementById('fecha').value;
+            const hora = document.getElementById('hora').value;
+            const tipo = document.getElementById('tipo').value;
+            const comentarios = document.getElementById('comentarios').value;
+
+            const mensaje = `Hola, quiero reservar una actuación de Los 4 Ases.\nNombre: ${nombre}\nTeléfono: ${telefono}\nFecha: ${fecha}\nHora: ${hora}\nTipo de actuación: ${tipo}\nComentarios: ${comentarios || 'Ninguno'}`;
+
+            const mensajeEncoded = encodeURIComponent(mensaje);
+            const numeroWhatsApp = '3758649299';
+            const urlWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${mensajeEncoded}`;
+
+            window.open(urlWhatsApp, '_blank');
+        }
+
+        // WhatsApp Integration for Museo
+        function enviarReservaMuseo(event) {
+            event.preventDefault();
+
+            const nombre = document.getElementById('nombre-museo').value;
+            const telefono = document.getElementById('telefono-museo').value;
+            const fecha = document.getElementById('fecha-museo').value;
+            const hora = document.getElementById('hora-museo').value;
+            const cantidad = document.getElementById('cantidad-museo').value;
+            const comentarios = document.getElementById('comentarios-museo').value;
+
+            const mensaje = `Hola, quiero hacer una reserva para visitar el Museo de Los 4 Ases.\nNombre: ${nombre}\nTeléfono: ${telefono}\nFecha: ${fecha}\nHora: ${hora}\nCantidad de personas: ${cantidad}\nComentarios: ${comentarios || 'Ninguno'}`;
+
+            const mensajeEncoded = encodeURIComponent(mensaje);
+            const numeroWhatsApp = '3758649299';
+            const urlWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${mensajeEncoded}`;
+
+            window.open(urlWhatsApp, '_blank');
+        }
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#' && document.querySelector(href)) {
+                    e.preventDefault();
+                    document.querySelector(href).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
