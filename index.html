@@ -334,9 +334,9 @@
 
         .historia-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2.5rem;
-            margin-top: 3rem;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
         }
 
         .historia-card {
@@ -345,30 +345,28 @@
             border-radius: 12px;
             box-shadow: var(--shadow-sm);
             transition: all 0.3s ease;
-            border-left: 4px solid var(--primary-gold);
         }
 
         .historia-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-lg);
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
         }
 
         .historia-card h4 {
             font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             margin-bottom: 1rem;
             color: var(--primary-dark);
         }
 
         .historia-card p {
             font-size: 0.95rem;
-            line-height: 1.7;
+            line-height: 1.6;
             color: var(--text-dark);
         }
 
-        /* ==================== GALERÍA SLIDER ==================== */
+        /* ==================== GALLERY SECTION ==================== */
         .gallery-container {
-            position: relative;
             margin-top: 3rem;
         }
 
@@ -376,27 +374,14 @@
             display: flex;
             gap: 1.5rem;
             overflow-x: auto;
-            scroll-behavior: smooth;
             padding: 1rem 0;
+            scroll-behavior: smooth;
             scroll-snap-type: x mandatory;
         }
 
-        .gallery-slider::-webkit-scrollbar {
-            height: 6px;
-        }
-
-        .gallery-slider::-webkit-scrollbar-track {
-            background: var(--border-light);
-            border-radius: 10px;
-        }
-
-        .gallery-slider::-webkit-scrollbar-thumb {
-            background: var(--primary-gold);
-            border-radius: 10px;
-        }
-
         .gallery-item {
-            flex: 0 0 300px;
+            flex-shrink: 0;
+            width: 300px;
             height: 250px;
             border-radius: 12px;
             box-shadow: var(--shadow-md);
@@ -408,6 +393,7 @@
             font-weight: 500;
             transition: transform 0.3s ease;
             object-fit: cover;
+            cursor: pointer;
         }
 
         .gallery-item:hover {
@@ -611,6 +597,7 @@
             overflow: hidden;
             box-shadow: var(--shadow-md);
             transition: all 0.3s ease;
+            cursor: pointer;
         }
 
         .coleccion-item:hover {
@@ -628,6 +615,7 @@
             font-size: 3rem;
             font-weight: 500;
             object-fit: cover;
+            cursor: pointer;
         }
 
         .coleccion-content {
@@ -645,6 +633,196 @@
             font-size: 0.95rem;
             line-height: 1.6;
             color: var(--text-dark);
+        }
+
+        /* ==================== PELÍCULA SECTION ==================== */
+        .pelicula-section {
+            background: white;
+        }
+
+        .pelicula-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            margin-top: 3rem;
+        }
+
+        .pelicula-video {
+            position: relative;
+        }
+
+        .video-link {
+            position: relative;
+            display: block;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .pelicula-poster {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .video-link:hover .pelicula-poster {
+            transform: scale(1.05);
+        }
+
+        .video-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80px;
+            height: 80px;
+            background: var(--primary-gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            color: var(--primary-dark);
+            transition: all 0.3s ease;
+            opacity: 0.9;
+        }
+
+        .video-link:hover .video-overlay {
+            background: #e8b887;
+            transform: translate(-50%, -50%) scale(1.1);
+        }
+
+        .pelicula-texto h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-dark);
+        }
+
+        .pelicula-texto p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+        }
+
+        /* ==================== RESERVA MUSEO SECTION ==================== */
+        .reserva-museo-section {
+            background: var(--primary-cream);
+        }
+
+        /* ==================== MODAL GALÍRÍA ==================== */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .modal-content {
+            position: relative;
+            max-width: 90vw;
+            max-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-image {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: var(--primary-gold);
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: rgba(0, 0, 0, 0.5);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid var(--primary-gold);
+        }
+
+        .modal-close:hover {
+            background: var(--primary-gold);
+            color: var(--primary-dark);
+            transform: scale(1.1);
+        }
+
+        .modal-prev, .modal-next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--primary-gold);
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 15px 20px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            border: 2px solid var(--primary-gold);
+            user-select: none;
+        }
+
+        .modal-prev:hover, .modal-next:hover {
+            background: var(--primary-gold);
+            color: var(--primary-dark);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .modal-prev {
+            left: 20px;
+        }
+
+        .modal-next {
+            right: 20px;
+        }
+
+        .modal-counter {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--primary-gold);
+            background: rgba(0, 0, 0, 0.7);
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
         }
 
         /* ==================== VISITA SECTION ==================== */
@@ -768,6 +946,27 @@
             opacity: 0.8;
         }
 
+        .whatsapp-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: #25d366;
+            color: white;
+            border-radius: 50%;
+            text-decoration: none;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(37, 211, 102, 0.3);
+        }
+
+        .whatsapp-btn:hover {
+            background: #20ba5a;
+            transform: scale(1.1);
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.5);
+        }
+
         /* ==================== RESPONSIVE ==================== */
         @media (max-width: 768px) {
             header {
@@ -801,141 +1000,99 @@
 
             .intro-content,
             .vida-content,
-            .visita-content {
+            .visita-content,
+            .pelicula-content {
                 grid-template-columns: 1fr;
-            }
-
-            .intro-image,
-            .vida-image,
-            .visita-image {
-                height: 300px;
             }
 
             .form-row {
                 grid-template-columns: 1fr;
             }
 
-            .reserva-form,
-            .contacto-form {
-                padding: 2rem 1.5rem;
+            .gallery-slider {
+                gap: 1rem;
             }
 
             .gallery-item {
-                flex: 0 0 250px;
+                width: 250px;
                 height: 200px;
             }
 
-            .hero-buttons {
-                flex-direction: column;
-                align-items: center;
+            .modal-prev, .modal-next {
+                font-size: 30px;
+                padding: 10px 15px;
             }
 
-            .btn {
-                width: 100%;
-                max-width: 300px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .logo {
-                font-size: 1.4rem;
+            .modal-close {
+                font-size: 30px;
+                width: 40px;
+                height: 40px;
             }
 
-            nav a, nav button {
-                font-size: 0.85rem;
-                margin-left: 0;
+            .colecciones-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .historia-grid {
+                grid-template-columns: 1fr;
             }
 
             .hero h1 {
                 font-size: 2.5rem;
             }
 
-            .hero p {
-                font-size: 1rem;
-            }
-
             .section-title {
                 font-size: 1.8rem;
             }
 
-            .historia-grid,
-            .colecciones-grid {
-                grid-template-columns: 1fr;
+            .menu-toggle {
+                display: block;
             }
 
-            .gallery-item {
-                flex: 0 0 200px;
-                height: 180px;
-            }
-
-            .reserva-form,
-            .contacto-form {
+            .nav-menu {
+                position: absolute;
+                top: 70px;
+                right: 20px;
+                background: rgba(26,26,26,0.98);
+                backdrop-filter: blur(10px);
                 padding: 1.5rem;
+                border-radius: 12px;
+                box-shadow: var(--shadow-lg);
+                display: none;
+                flex-direction: column;
+                gap: 1.2rem;
+                min-width: 180px;
             }
 
-            .museo-section {
-                padding: 4rem 1.5rem;
+            .nav-menu.active {
+                display: flex;
+            }
+
+            .nav-menu a,
+            .nav-menu button {
+                margin: 0;
+                text-align: left;
+                font-size: 0.95rem;
             }
         }
-
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-        }
-        /* ==================== MOBILE MENU ==================== */
-
-.menu-toggle {
-    display: none;
-    background: none;
-    border: none;
-    font-size: 1.8rem;
-    color: var(--primary-gold);
-    cursor: pointer;
-}
-
-@media (max-width: 768px) {
-
-    .header-container {
-        flex-direction: row;
-        justify-content: space-between;
-    }
-
-    .menu-toggle {
-        display: block;
-    }
-
-    .nav-menu {
-        position: absolute;
-        top: 70px;
-        right: 20px;
-        background: rgba(26,26,26,0.98);
-        backdrop-filter: blur(10px);
-        padding: 1.5rem;
-        border-radius: 12px;
-        box-shadow: var(--shadow-lg);
-        display: none;
-        flex-direction: column;
-        gap: 1.2rem;
-        min-width: 180px;
-    }
-
-    .nav-menu.active {
-        display: flex;
-    }
-
-    .nav-menu a,
-    .nav-menu button {
-        margin: 0;
-        text-align: left;
-        font-size: 0.95rem;
-    }
-}
 
     </style>
 </head>
 <body>
-    <!-- ==================== PAGE 1: INICIO ==================== -->
+    <!-- ==================== MODAL GALERÍA ==================== -->
+    <div id="galleryModal" class="modal">
+        <div class="modal-content">
+            <img id="modalImage" src="" alt="Galería ampliada" class="modal-image">
+            <span class="modal-close" onclick="closeGalleryModal()">&times;</span>
+            <span class="modal-prev" onclick="prevGalleryImage()">❮</span>
+            <span class="modal-next" onclick="nextGalleryImage()">❯</span>
+            <div class="modal-counter">
+                <span id="imageCounter">1 / 1</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== PAGE 1:  ==================== -->
     <div id="page-inicio" class="page active">
         <!-- ==================== HEADER ==================== -->
         <header>
@@ -975,9 +1132,9 @@
                 <div class="intro-text">
                     <h3>Un legado musical inmortal</h3>
                     <p>Los 4 Ases es más que un grupo musical. Es la voz de Apóstoles, la identidad sonora de Misiones y el puente entre generaciones. Desde sus inicios, han llevado la música tradicional y alegre de la región a cada rincón, creando momentos inolvidables en bailes, celebraciones y encuentros familiares.</p>
-                    <p>Con Rulo Grabovieski a la cabeza, el grupo ha mantenido viva la esencia del chamamé y el folklore misionero, demostrando que la verdadera música no tiene edad ni límites.</p>
+                    <p>Con Rulo Grabovieski a la cabeza, el grupo ha mantenido viva la esencia de los ritmos(kolomeika, shotis, chamamé, corridos, vanerao, valses, polkitas) y el folklore misionero, demostrando que la verdadera música no tiene edad ni límites.</p>
                 </div>
-                <img src="img orquesta.jpg" alt="Los 4 Ases - Grupo Musical" class="intro-image">
+                <img src="img orquesta.jpeg" alt="Los 4 Ases - Grupo Musical" class="intro-image">
             </div>
         </section>
 
@@ -989,11 +1146,11 @@
             <div class="historia-grid">
                 <div class="historia-card">
                     <h4>🎵 Los Comienzos</h4>
-                    <p>Todo comenzó con la pasión por la música tradicional. Un grupo de músicos decidió unirse para compartir los ritmos más auténticos de la región, llevando la alegría del chamamé a cada actuación.</p>
+                    <p>Todo comenzó con la pasión por la música tradicional. Un grupo de amigos decidió unirse para compartir los ritmos más auténticos de la región, llevando la alegría de la musica de la region a cada actuación. </p>
                 </div>
                 <div class="historia-card">
                     <h4>🎶 Evolución Musical</h4>
-                    <p>A lo largo de los años, Los 4 Ases perfeccionaron su estilo, fusionando tradición con innovación. Su sonoridad característica se convirtió en sinónimo de calidad y autenticidad musical.</p>
+                    <p>A lo largo de los años, Los 4 Ases perfeccionaron su estilo, fusionando tradición con innovación. Su sonoridad característica se convirtió en sinónimo de calidad y autenticidad musical. La historia y memoria de los que hayan formado parte del grupo en algun momento, ocasion o tiempo. Rulo siempre agradece a todos los que fueron y son parte de Los 4 Ases   </p>
                 </div>
                 <div class="historia-card">
                     <h4>🏆 Reconocimiento</h4>
@@ -1008,11 +1165,11 @@
             <h3 style="text-align: center; margin-top: 4rem; margin-bottom: 2rem; font-family: 'Playfair Display', serif; font-size: 2rem;">Galería de Momentos</h3>
             <div class="gallery-container">
                 <div class="gallery-slider" id="gallerySlider">
-                    <img src="museo 22.jpg" alt="Galería - Foto museo de los 4 ases 1" class="gallery-item">
-                    <img src="imgmuseoeoeo.jpeg" alt="Galería - Foto museo de los 4 ases 2" class="gallery-item">
-                    <img src="img museoo.jpg" alt="Galería - Foto museo de los 4 ases 3" class="gallery-item">
-                    <img src="museo33.jpg" alt="Galería - Foto museo de los 4 ases 4" class="gallery-item">
-                    <img src="museo img.jpeg" alt="Galería - Foto museo de los 4 ases 5" class="gallery-item">
+                    <img src="escenario rulo.jfif" alt="Galería - Foto museo de los 4 ases 1" class="gallery-item" onclick="openGalleryModal(0)">
+                    <img src="imgmuseoeoeo.jpeg" alt="Galería - Foto museo de los 4 ases 2" class="gallery-item" onclick="openGalleryModal(1)">
+                    <img src="md.webp" alt="Galería - Foto museo de los 4 ases 3" class="gallery-item" onclick="openGalleryModal(2)">
+                    <img src="rulo-grabo5-5ve604olom70.jpg" alt="Galería - Foto museo de los 4 ases 4" class="gallery-item" onclick="openGalleryModal(3)">
+                    <img src="rulograbovieski-14.webp" alt="Galería - Foto museo de los 4 ases 5" class="gallery-item" onclick="openGalleryModal(4)">
                 </div>
                 <div class="gallery-controls">
                     <button class="gallery-btn" onclick="scrollGallery(-1)">❮</button>
@@ -1027,12 +1184,30 @@
             <p class="section-subtitle">Historias que trascienden generaciones</p>
             
             <div class="vida-content">
-                <img src="img orquesta.jpg" alt="Los 4 Ases en Acción" class="vida-image">
+                <img src="img orquesta.jpeg" alt="Los 4 Ases en Acción" class="vida-image">
                 <div class="vida-text">
                     <h3>Más que música, es emoción</h3>
                     <p>Cada nota que toca Los 4 Ases lleva consigo historias de amor, celebraciones familiares y momentos que han marcado la vida de miles de personas en Misiones.</p>
                     <p>Desde los bailes tradicionales hasta las presentaciones en eventos especiales, el grupo ha sido testigo y protagonista de los momentos más importantes de la comunidad misionera.</p>
                     <p>Su música es un puente entre el pasado y el presente, un recordatorio de nuestras raíces y un regalo para las futuras generaciones que descubrirán la magia de Los 4 Ases.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== PELÍCULA SECTION ==================== -->
+        <section class="pelicula-section" id="pelicula">
+            <h2 class="section-title">El Viento Respira</h2>
+            <p class="section-subtitle">La película de Rulo y Los 4 Ases</p>
+            
+            <div class="pelicula-content">
+                <div class="pelicula-video">
+                        <img src="El-viento-respira-Cine-de-Misiones.jpg" alt="El Viento Respira - Película" class="pelicula-poster">
+                    </a>
+                </div>
+                <div class="pelicula-texto">
+                    <h3>Una historia de música y pasión</h3>
+                    <p>"El Viento Respira" es una película que cuenta la historia de Rulo Grabovieski y Los 4 Ases, capturando la esencia de su música, su dedicación y el impacto que han tenido en la comunidad misionera.</p>
+                    <p>A través de imágenes cautivadoras y testimonios auténticos, la película nos sumerge en el mundo de la música tradicional y el folklore que define la identidad cultural de Apóstoles.</p>
                 </div>
             </div>
         </section>
@@ -1103,6 +1278,7 @@
                 <a href="#reserva">Reservar</a>
                 <button onclick="showPage('page-museo')">Museo</button>
                 <a href="mailto:contacto@los4ases.com">Contacto</a>
+                <a href="https://wa.me/3758502801?text=Me gustaria consultar por sus webs!!!" target="_blank" class="whatsapp-btn" title="Contactar por WhatsApp">💬</a>
             </div>
         </footer>
     </div>
@@ -1140,7 +1316,7 @@
                     <p>El Museo de Los 4 Ases es un espacio único en Apóstoles dedicado a preservar y compartir la historia de este grupo legendario. Aquí encontrarás instrumentos históricos, fotografías, documentos y memorabilia que cuentan la trayectoria de más de 50 años de dedicación a la música.</p>
                     <p>Cada objeto en nuestro museo tiene una historia que contar, cada fotografía captura un momento especial, y cada instrumento ha sido testigo de la evolución musical del grupo y de la comunidad misionera.</p>
                 </div>
-                <img src="museo44.jpg" alt="Entrada del Museo" class="intro-image">
+                <img src="museo44.jpeg" alt="Entrada del Museo" class="intro-image">
             </div>
         </section>
 
@@ -1169,6 +1345,8 @@
             </div>
         </section>
 
+        
+
         <!-- ==================== COLECCIONES SECTION ==================== -->
         <section class="colecciones-section" id="colecciones">
             <h2 class="section-title">Nuestras Colecciones</h2>
@@ -1176,7 +1354,7 @@
             
             <div class="colecciones-grid">
                 <div class="coleccion-item">
-                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 250'%3E%3Cdefs%3E%3ClinearGradient id='c1' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:rgb(212,165,116);stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:rgb(107,62,62);stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='300' height='250' fill='url(%23c1)'/%3E%3Ctext x='150' y='125' font-family='Arial, sans-serif' font-size='48' text-anchor='middle' fill='white' opacity='0.6'%3E🎸%3C/text%3E%3C/svg%3E" alt="Instrumentos Históricos" class="coleccion-image">
+                    <img src="inst historico.jpeg" alt="Instrumentos Históricos" class="coleccion-image" onclick="openCollectionGallery(0)">
                     <div class="coleccion-content">
                         <h4>Instrumentos Históricos</h4>
                         <p>Instrumentos originales utilizados por Los 4 Ases a lo largo de su trayectoria, incluyendo acordeones, guitarras y otros instrumentos tradicionales.</p>
@@ -1184,7 +1362,7 @@
                 </div>
 
                 <div class="coleccion-item">
-                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 250'%3E%3Cdefs%3E%3ClinearGradient id='c2' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:rgb(107,62,62);stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:rgb(74,95,63);stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='300' height='250' fill='url(%23c2)'/%3E%3Ctext x='150' y='125' font-family='Arial, sans-serif' font-size='48' text-anchor='middle' fill='white' opacity='0.6'%3E📷%3C/text%3E%3C/svg%3E" alt="Fotografías y Documentos" class="coleccion-image">
+                    <img src="imgrulo.jpeg" alt="Fotografías y Documentos" class="coleccion-image" onclick="openCollectionGallery(1)">
                     <div class="coleccion-content">
                         <h4>Fotografías y Documentos</h4>
                         <p>Una amplia colección de fotografías que documentan actuaciones, eventos especiales y momentos importantes de la historia del grupo.</p>
@@ -1192,7 +1370,7 @@
                 </div>
 
                 <div class="coleccion-item">
-                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 250'%3E%3Cdefs%3E%3ClinearGradient id='c3' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:rgb(74,95,63);stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:rgb(212,165,116);stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='300' height='250' fill='url(%23c3)'/%3E%3Ctext x='150' y='125' font-family='Arial, sans-serif' font-size='48' text-anchor='middle' fill='white' opacity='0.6'%3E🎵%3C/text%3E%3C/svg%3E" alt="Grabaciones Históricas" class="coleccion-image">
+                    <img src="discos.jpeg" alt="Grabaciones Históricas" class="coleccion-image" onclick="openCollectionGallery(2)">
                     <div class="coleccion-content">
                         <h4>Grabaciones Históricas</h4>
                         <p>Grabaciones de audio de algunas de las actuaciones más memorables y canciones icónicas de Los 4 Ases a través de los años.</p>
@@ -1200,7 +1378,7 @@
                 </div>
 
                 <div class="coleccion-item">
-                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 250'%3E%3Cdefs%3E%3ClinearGradient id='c4' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:rgb(26,26,26);stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:rgb(212,165,116);stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='300' height='250' fill='url(%23c4)'/%3E%3Ctext x='150' y='125' font-family='Arial, sans-serif' font-size='48' text-anchor='middle' fill='white' opacity='0.6'%3E🏆%3C/text%3E%3C/svg%3E" alt="Reconocimientos" class="coleccion-image">
+                    <img src="distincion6.jpeg" alt="Reconocimientos" class="coleccion-image" onclick="openCollectionGallery(3)">
                     <div class="coleccion-content">
                         <h4>Reconocimientos</h4>
                         <p>Premios, distinciones y reconocimientos recibidos por el grupo de parte de instituciones culturales y la comunidad.</p>
@@ -1208,21 +1386,60 @@
                 </div>
 
                 <div class="coleccion-item">
-                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 250'%3E%3Cdefs%3E%3ClinearGradient id='c5' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:rgb(212,165,116);stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:rgb(74,95,63);stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='300' height='250' fill='url(%23c5)'/%3E%3Ctext x='150' y='125' font-family='Arial, sans-serif' font-size='48' text-anchor='middle' fill='white' opacity='0.6'%3E📰%3C/text%3E%3C/svg%3E" alt="Artículos de Prensa" class="coleccion-image">
+                    <img src="prensa.jpeg" alt="Artículos de Prensa" class="coleccion-image" onclick="openCollectionGallery(4)">
                     <div class="coleccion-content">
                         <h4>Artículos de Prensa</h4>
                         <p>Recortes de periódicos y artículos que documentan la trayectoria y el impacto cultural del grupo en Misiones.</p>
                     </div>
                 </div>
 
-                <div class="coleccion-item">
-                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 250'%3E%3Cdefs%3E%3ClinearGradient id='c6' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:rgb(107,62,62);stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:rgb(212,165,116);stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='300' height='250' fill='url(%23c6)'/%3E%3Ctext x='150' y='125' font-family='Arial, sans-serif' font-size='48' text-anchor='middle' fill='white' opacity='0.6'%3E✨%3C/text%3E%3C/svg%3E" alt="Memorabilia" class="coleccion-image">
-                    <div class="coleccion-content">
-                        <h4>Memorabilia</h4>
-                        <p>Objetos especiales, souvenirs y recuerdos que representan momentos significativos en la historia de Los 4 Ases.</p>
+            </div>
+        </section>
+
+        <!-- ==================== RESERVA MUSEO SECTION ==================== -->
+        <section class="reserva-museo-section" id="reserva-museo">
+            <h2 class="section-title">Reserva tu Visita al Museo</h2>
+            <p class="section-subtitle">Planifica tu experiencia cultural</p>
+            
+            <form class="reserva-form" onsubmit="enviarReservaMuseoWhatsApp(event)">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="nombre-museo">Nombre y Apellido *</label>
+                        <input type="text" id="nombre-museo" name="nombre-museo" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="telefono-museo">Teléfono *</label>
+                        <input type="tel" id="telefono-museo" name="telefono-museo" required>
                     </div>
                 </div>
-            </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="fecha-museo">Fecha de Visita *</label>
+                        <input type="date" id="fecha-museo" name="fecha-museo" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="hora-museo">Hora Preferida *</label>
+                        <input type="time" id="hora-museo" name="hora-museo" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="personas-museo">Cantidad de Personas *</label>
+                    <input type="number" id="personas-museo" name="personas-museo" min="1" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="comentarios-museo">Comentarios Adicionales</label>
+                    <textarea id="comentarios-museo" name="comentarios-museo" placeholder="¿Tienes alguna solicitud especial?"></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Reservar Visita</button>
+                
+                <div class="whatsapp-info">
+                    📱 Tu reserva será confirmada por WhatsApp al +54 3758 649299
+                </div>
+            </form>
         </section>
 
         <!-- ==================== VISITA SECTION ==================== -->
@@ -1240,19 +1457,19 @@
                     <h4>Detalles de Visita</h4>
                     <div class="detail-item">
                         <div class="detail-label">📍 Ubicación</div>
-                        <div class="detail-value">Apóstoles, Misiones, Argentina</div>
+                        <div class="detail-value">Rivadavia 1557, Apóstoles, Misiones, Argentina</div>
                     </div>
                     <div class="detail-item">
                         <div class="detail-label">🕐 Horarios</div>
-                        <div class="detail-value">Martes a Domingo: 10:00 - 18:00 hs<br>Lunes: Cerrado</div>
+                        <div class="detail-value">A confirmar al WhatsApp.</div>
                     </div>
                     <div class="detail-item">
                         <div class="detail-label">💰 Entrada</div>
-                        <div class="detail-value">Consultar precios especiales para grupos</div>
+                        <div class="detail-value">Entrada libre, consultar disponibilidad.</div>
                     </div>
                     <div class="detail-item">
                         <div class="detail-label">📞 Contacto</div>
-                        <div class="detail-value">Teléfono: +54 3758 502801<br>WhatsApp disponible</div>
+                        <div class="detail-value">Teléfono: +54 3758 649299<br>WhatsApp disponible</div>
                     </div>
                     <div class="detail-item">
                         <div class="detail-label">👥 Visitas Guiadas</div>
@@ -1260,112 +1477,146 @@
                     </div>
                 </div>
             </div>
-            <img src="imgmuseo99.jpeg" alt="Interior del Museo" class="visita-image" style="margin-top: 3rem;">
-        </section>
-
-        <!-- ==================== CONTACTO SECTION ==================== -->
-        <section class="contacto-section">
-            <h2 class="section-title">Reserva tu Visita</h2>
-            <p class="section-subtitle">Completa el formulario y nos contactaremos por WhatsApp para confirmar</p>
-            
-            <form class="contacto-form" onsubmit="enviarReservaMuseo(event)">
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="nombre-museo">Nombre y Apellido *</label>
-                        <input type="text" id="nombre-museo" name="nombre" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="telefono-museo">Teléfono *</label>
-                        <input type="tel" id="telefono-museo" name="telefono" required>
-                    </div>
-                </div>
-
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="fecha-museo">Fecha de Visita *</label>
-                        <input type="date" id="fecha-museo" name="fecha" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="hora-museo">Hora Preferida *</label>
-                        <input type="time" id="hora-museo" name="hora" required>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="cantidad-museo">Cantidad de Personas *</label>
-                    <input type="number" id="cantidad-museo" name="cantidad" min="1" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="comentarios-museo">Comentarios o Solicitudes Especiales</label>
-                    <textarea id="comentarios-museo" name="comentarios" placeholder="Cuéntanos si necesitas visita guiada u otra información..."></textarea>
-                </div>
-
-                <button type="submit" class="btn btn-primary">Reservar por WhatsApp</button>
-                
-                <div class="whatsapp-info">
-                    📱 Tu solicitud de reserva será enviada directamente a nuestro WhatsApp para confirmar disponibilidad
-                </div>
-            </form>
-
-            <div style="text-align: center; margin-top: 2rem;">
-                <p style="font-size: 1.05rem; margin-bottom: 1rem;">O contactarnos directamente:</p>
-                <p style="font-size: 1rem; margin-bottom: 0.5rem;">📞 Teléfono: <strong>+54 3758 502801</strong></p>
-                <a href="https://wa.me/3758649299" target="_blank" class="btn btn-primary">
-    💬 Enviar WhatsApp
-</a>
-<a href="https://www.instagram.com/rulo_grabovieski/" target="_blank" class="btn btn-primary">
-    Instagram
-</a>
-<a href="https://www.facebook.com/rulo.grabovieski/" target="_blank" class="btn btn-primary">
-    Facebook
-</a>
-
-            </div>
         </section>
 
         <!-- ==================== FOOTER ==================== -->
         <footer>
-            <p>&copy; 2026 Museo de Los 4 Ases - Todos los derechos reservados</p>
+            <p>&copy; 2026 Los 4 Ases - Todos los derechos reservados</p>
             <p>Apóstoles, Misiones - Argentina</p>
             <div class="footer-links">
-                <button onclick="showPage('page-inicio')">Inicio</button>
                 <a href="#museo-historia">Historia</a>
                 <a href="#colecciones">Colecciones</a>
-                <a href="#visita">Visita</a>
+                <button onclick="showPage('page-inicio')">Inicio</button>
+                <a href="mailto:contacto@los4ases.com">Contacto</a>
+                <a href="https://wa.me/3758502801?text=Me gustaria consultar por sus webs!!!" target="_blank" class="whatsapp-btn" title="Contactar por WhatsApp">💬</a>
             </div>
         </footer>
     </div>
 
     <script>
-        // Page Navigation
+        // Variables globales para la galería
+        let currentModalIndex = 0;
+        let currentCollection = [];
+        
+        // Datos de colecciones con imágenes
+        const collectionsData = {
+            0: {
+                name: "Instrumentos Históricos",
+                images: [
+                    "inst historico.jpeg",
+                ]
+            },
+            1: {
+                name: "Fotografías y Documentos",
+                images: [
+                    "imgrulo.jpeg"
+                ]
+            },
+            2: {
+                name: "Grabaciones Históricas",
+                images: [
+                    "discosss.jpeg",
+                    "discos.jpeg",
+                ]
+            },
+            3: {
+                name: "Reconocimientos",
+                images: [
+                    "distincion1.jpeg",
+                    "distincion2.jpeg",
+                    "distincion3.jpeg",
+                    "distincion4.jpeg",
+                    "distincion5.jpeg",
+                    "distincion6.jpeg",
+                    "distincion7.jpeg",
+                    "distincion8.jpeg",
+                    "distincion9.jpeg",
+                ]
+            },
+            4: {
+                name: "Artículos de Prensa",
+                images: [
+                    "prensaa.jpeg",
+                    "prensa.jpeg"
+                ]
+            },
+            
+        };
+
+        // Funciones de navegación de páginas
         function showPage(pageId) {
-            // Hide all pages
             document.querySelectorAll('.page').forEach(page => {
                 page.classList.remove('active');
             });
-            
-            // Show selected page
             document.getElementById(pageId).classList.add('active');
-            
-            // Scroll to top
             window.scrollTo(0, 0);
         }
 
-        // Gallery Slider Function
+        // Funciones de galería de colecciones
+        function openCollectionGallery(collectionIndex) {
+            currentCollection = collectionsData[collectionIndex].images;
+            currentModalIndex = 0;
+            updateModalImage();
+            document.getElementById('galleryModal').classList.add('active');
+        }
+
+        function closeGalleryModal() {
+            document.getElementById('galleryModal').classList.remove('active');
+        }
+
+        function nextGalleryImage() {
+            currentModalIndex = (currentModalIndex + 1) % currentCollection.length;
+            updateModalImage();
+        }
+
+        function prevGalleryImage() {
+            currentModalIndex = (currentModalIndex - 1 + currentCollection.length) % currentCollection.length;
+            updateModalImage();
+        }
+
+        function updateModalImage() {
+            document.getElementById('modalImage').src = currentCollection[currentModalIndex];
+            document.getElementById('imageCounter').textContent = `${currentModalIndex + 1} / ${currentCollection.length}`;
+        }
+
+        // Cerrar modal al hacer clic fuera
+        document.addEventListener('click', function(event) {
+            const modal = document.getElementById('galleryModal');
+            if (event.target === modal) {
+                closeGalleryModal();
+            }
+        });
+
+        // Navegación con teclado
+        document.addEventListener('keydown', function(event) {
+            const modal = document.getElementById('galleryModal');
+            if (modal.classList.contains('active')) {
+                if (event.key === 'ArrowRight') nextGalleryImage();
+                if (event.key === 'ArrowLeft') prevGalleryImage();
+                if (event.key === 'Escape') closeGalleryModal();
+            }
+        });
+
+        // Funciones originales del sitio
         function scrollGallery(direction) {
             const slider = document.getElementById('gallerySlider');
-            const scrollAmount = 320; // Item width + gap
+            const scrollAmount = 300;
             slider.scrollBy({
                 left: direction * scrollAmount,
                 behavior: 'smooth'
             });
         }
 
-        // WhatsApp Integration for Actuaciones
+        function openGalleryModal(index) {
+            const images = document.querySelectorAll('.gallery-item');
+            currentCollection = Array.from(images).map(img => img.src);
+            currentModalIndex = index;
+            updateModalImage();
+            document.getElementById('galleryModal').classList.add('active');
+        }
+
         function enviarPorWhatsApp(event) {
             event.preventDefault();
-
             const nombre = document.getElementById('nombre').value;
             const telefono = document.getElementById('telefono').value;
             const fecha = document.getElementById('fecha').value;
@@ -1373,54 +1624,24 @@
             const tipo = document.getElementById('tipo').value;
             const comentarios = document.getElementById('comentarios').value;
 
-            const mensaje = `Hola, quiero reservar una actuación de Los 4 Ases.\nNombre: ${nombre}\nTeléfono: ${telefono}\nFecha: ${fecha}\nHora: ${hora}\nTipo de actuación: ${tipo}\nComentarios: ${comentarios || 'Ninguno'}`;
-
-            const mensajeEncoded = encodeURIComponent(mensaje);
-            const numeroWhatsApp = '3758649299';
-            const urlWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${mensajeEncoded}`;
-
-            window.open(urlWhatsApp, '_blank');
+            const mensaje = `Hola, me gustaría hacer una reserva de actuación:\n\nNombre: ${nombre}\nTeléfono: ${telefono}\nFecha: ${fecha}\nHora: ${hora}\nTipo: ${tipo}\nComentarios: ${comentarios}`;
+            const url = `https://wa.me/?text=${encodeURIComponent(mensaje)}`;
+            window.open(url, '_blank');
         }
 
-        // WhatsApp Integration for Museo
-        function enviarReservaMuseo(event) {
+        function enviarReservaMuseoWhatsApp(event) {
             event.preventDefault();
-
             const nombre = document.getElementById('nombre-museo').value;
             const telefono = document.getElementById('telefono-museo').value;
             const fecha = document.getElementById('fecha-museo').value;
             const hora = document.getElementById('hora-museo').value;
-            const cantidad = document.getElementById('cantidad-museo').value;
+            const personas = document.getElementById('personas-museo').value;
             const comentarios = document.getElementById('comentarios-museo').value;
 
-            const mensaje = `Hola, quiero hacer una reserva para visitar el Museo de Los 4 Ases.\nNombre: ${nombre}\nTeléfono: ${telefono}\nFecha: ${fecha}\nHora: ${hora}\nCantidad de personas: ${cantidad}\nComentarios: ${comentarios || 'Ninguno'}`;
-
-            const mensajeEncoded = encodeURIComponent(mensaje);
-            const numeroWhatsApp = '3758649299';
-            const urlWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${mensajeEncoded}`;
-
-            window.open(urlWhatsApp, '_blank');
+            const mensaje = `Hola, me gustaría reservar una visita al Museo de Los 4 Ases:\n\nNombre: ${nombre}\nTeléfono: ${telefono}\nFecha: ${fecha}\nHora: ${hora}\nCantidad de personas: ${personas}\nComentarios: ${comentarios}`;
+            const url = `https://wa.me/3758649299?text=${encodeURIComponent(mensaje)}`;
+            window.open(url, '_blank');
         }
-
-        // Smooth scroll for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                const href = this.getAttribute('href');
-                if (href !== '#' && document.querySelector(href)) {
-                    e.preventDefault();
-                    document.querySelector(href).scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-
-        function toggleMenu() {
-    document.querySelectorAll('.nav-menu').forEach(menu => {
-        menu.classList.toggle('active');
-    });
-}
-
     </script>
 </body>
 </html>
