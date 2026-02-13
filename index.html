@@ -136,6 +136,102 @@
             box-shadow: var(--shadow-md);
         }
 
+        /* ==================== HAMBURGER MENU ==================== */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 0.5rem;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: var(--primary-gold);
+            margin: 5px 0;
+            transition: all 0.3s ease;
+            border-radius: 2px;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(10px, 10px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        nav.mobile-menu {
+            position: absolute;
+            top: 60px;
+            left: 0;
+            right: 0;
+            background: rgba(26, 26, 26, 0.98);
+            flex-direction: column;
+            padding: 2rem;
+            gap: 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            border-bottom: 1px solid rgba(212, 165, 116, 0.2);
+        }
+
+        nav.mobile-menu.active {
+            max-height: 500px;
+        }
+
+        nav.mobile-menu a,
+        nav.mobile-menu button {
+            margin-left: 0;
+            width: 100%;
+            text-align: left;
+            padding: 0.8rem 0;
+            border-bottom: 1px solid rgba(212, 165, 116, 0.1);
+        }
+
+        nav.mobile-menu a::after,
+        nav.mobile-menu button::after {
+            display: none;
+        }
+
+        nav.mobile-menu .nav-museum {
+            background: var(--primary-gold);
+            color: var(--primary-dark);
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            margin-left: 0;
+            text-align: center;
+            border: none;
+        }
+
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
+            nav:not(.mobile-menu) {
+                display: none;
+            }
+        }
+
+        @media (min-width: 769px) {
+            nav.mobile-menu {
+                display: none !important;
+            }
+        }
+
         /* ==================== HERO SECTION ==================== */
         .hero {
             margin-top: 60px;
@@ -1098,11 +1194,18 @@
         <header>
             <div class="header-container">
                 <a onclick="showPage('page-inicio')" class="logo">Los 4 Ases</a>
+                <button class="hamburger" onclick="toggleMobileMenu()"><span></span><span></span><span></span></button>
                 <nav>
                     <a href="#historia">Historia</a>
                     <a href="#vida">Legado</a>
                     <a href="#reserva">Reservar</a>
                     <button onclick="showPage('page-museo')" class="nav-museum">Museo</button>
+                </nav>
+                <nav class="mobile-menu" id="mobileMenu">
+                    <a href="#historia" onclick="closeMobileMenu()">Historia</a>
+                    <a href="#vida" onclick="closeMobileMenu()">Legado</a>
+                    <a href="#reserva" onclick="closeMobileMenu()">Reservar</a>
+                    <button onclick="showPage('page-museo'); closeMobileMenu();" class="nav-museum">Museo</button>
                 </nav>
             </div>
         </header>
@@ -1283,22 +1386,26 @@
         </footer>
     </div>
 
-    <!-- ==================== PAGE 2: MUSEO ==================== -->
+    <!-- ==================== PAGE 2: MUSEO ==================== -        <!-- ==================== PAGE 2: MUSEO ==================== -->
     <div id="page-museo" class="page">
-        <!-- ==================== HEADER ==================== -->
         <header>
             <div class="header-container">
                 <a onclick="showPage('page-inicio')" class="logo">Los 4 Ases</a>
+                <button class="hamburger" onclick="toggleMobileMenu()"><span></span><span></span><span></span></button>
                 <nav>
                     <a href="#museo-historia">Historia</a>
                     <a href="#colecciones">Colecciones</a>
                     <a href="#visita">Visita</a>
                     <button onclick="showPage('page-inicio')" class="nav-museum">Inicio</button>
                 </nav>
+                <nav class="mobile-menu" id="mobileMenu">
+                    <a href="#museo-historia" onclick="closeMobileMenu()">Historia</a>
+                    <a href="#colecciones" onclick="closeMobileMenu()">Colecciones</a>
+                    <a href="#visita" onclick="closeMobileMenu()">Visita</a>
+                    <button onclick="showPage('page-inicio'); closeMobileMenu();" class="nav-museum">Inicio</button>
+                </nav>
             </div>
-        </header>
-
-        <!-- ==================== HERO SECTION ==================== -->
+        </header>      <!-- ==================== HERO SECTION ==================== -->
         <section class="hero">
             <div class="hero-content">
                 <h1>Museo de Los 4 Ases</h1>
@@ -1494,6 +1601,21 @@
     </div>
 
     <script>
+        // Funciones de menú hamburguesa
+        function toggleMobileMenu() {
+            const hamburger = document.querySelector('.hamburger');
+            const mobileMenu = document.getElementById('mobileMenu');
+            hamburger.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+        }
+
+        function closeMobileMenu() {
+            const hamburger = document.querySelector('.hamburger');
+            const mobileMenu = document.getElementById('mobileMenu');
+            hamburger.classList.remove('active');
+            mobileMenu.classList.remove('active');
+        }
+
         // Variables globales para la galería
         let currentModalIndex = 0;
         let currentCollection = [];
@@ -1545,6 +1667,7 @@
 
         // Funciones de navegación de páginas
         function showPage(pageId) {
+            closeMobileMenu();
             document.querySelectorAll('.page').forEach(page => {
                 page.classList.remove('active');
             });
