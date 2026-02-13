@@ -1748,7 +1748,7 @@
             const comentarios = document.getElementById('comentarios').value;
 
             const mensaje = `Hola, me gustaría hacer una reserva de actuación:\n\nNombre: ${nombre}\nTeléfono: ${telefono}\nFecha: ${fecha}\nHora: ${hora}\nTipo: ${tipo}\nComentarios: ${comentarios}`;
-            const url = `https://wa.me/?text=${encodeURIComponent(mensaje)}`;
+            const url = `https://wa.me/5493758649299?text=${encodeURIComponent(mensaje)}`;
             window.open(url, '_blank');
         }
 
@@ -1763,7 +1763,7 @@
 
             const mensaje = `Hola, me gustaría reservar una visita al Museo de Los 4 Ases:\n\nNombre: ${nombre}\nTeléfono: ${telefono}\nFecha: ${fecha}\nHora: ${hora}\nCantidad de personas: ${personas}\nComentarios: ${comentarios}`;
             const url = `https://wa.me/5493758649299?text=${encodeURIComponent(mensaje)}`;
-            window.open(url, '_blank');
+            window.open(url , '_blank');
         }
     </script>
 </body>
