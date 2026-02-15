@@ -173,48 +173,49 @@
             gap: 1rem;
         }
 
-        nav.mobile-menu {
-            position: absolute;
-            top: 60px;
-            left: 0;
-            right: 0;
-            background: rgba(26, 26, 26, 0.98);
-            flex-direction: column;
-            padding: 2rem;
-            gap: 1.5rem;
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease;
-            border-bottom: 1px solid rgba(212, 165, 116, 0.2);
-        }
+        /* Estilos para el menú móvil horizontal y compacto */
+nav.mobile-menu {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background: rgba(26, 26, 26, 0.98);
+    /* Cambiado a row para disposición horizontal */
+    flex-direction: row; 
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 1rem;
+    gap: 0.8rem;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    border-bottom: 1px solid rgba(212, 165, 116, 0.2);
+}
 
-        nav.mobile-menu.active {
-            max-height: 500px;
-        }
+nav.mobile-menu.active {
+    max-height: 200px; /* Ajustado para que no ocupe mucho espacio */
+}
 
-        nav.mobile-menu a,
-        nav.mobile-menu button {
-            margin-left: 0;
-            width: 100%;
-            text-align: left;
-            padding: 0.8rem 0;
-            border-bottom: 1px solid rgba(212, 165, 116, 0.1);
-        }
+nav.mobile-menu a,
+nav.mobile-menu button {
+    margin-left: 0;
+    width: auto; /* Ancho automático para que quepan varios por línea */
+    text-align: center;
+    padding: 0.5rem 0.8rem;
+    border-bottom: none; /* Quitamos la línea divisoria vertical */
+    font-size: 0.85rem; /* Tamaño de fuente ligeramente menor para ahorrar espacio */
+}
 
-        nav.mobile-menu a::after,
-        nav.mobile-menu button::after {
-            display: none;
-        }
+nav.mobile-menu .nav-museum {
+    background: var(--primary-gold);
+    color: var(--primary-dark);
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    margin-left: 0;
+    text-align: center;
+    border: none;
+}
 
-        nav.mobile-menu .nav-museum {
-            background: var(--primary-gold);
-            color: var(--primary-dark);
-            padding: 0.8rem 1.5rem;
-            border-radius: 50px;
-            margin-left: 0;
-            text-align: center;
-            border: none;
-        }
 
         @media (max-width: 768px) {
             .hamburger {
@@ -1390,6 +1391,9 @@
                 <a href="#historia">Historia</a>
                 <a href="#reserva">Reservar</a>
                 <button onclick="showPage('page-museo')">Museo</button>
+<a href="https://wa.me/3758649299" target="_blank">
+  <button>Contacto</button>
+</a>
                 <a href="https://wa.me/3758502801?text=Me gustaria consultar por sus webs!!!" target="_blank" class="whatsapp-btn" title="Contactar por WhatsApp">💬</a>
             </div>
         </footer>
@@ -1419,6 +1423,9 @@
             <div class="hero-content">
                 <h1>Museo de Los 4 Ases</h1>
                 <p>Descubre el legado cultural de Apóstoles</p>
+                <!-- Botón para volver al inicio al final de la página del museo -->
+            <button onclick="showPage('page-inicio')" class="btn btn-secondary btn-return-home">Volver al Inicio</button>
+        </section>
             </div>
         </section>
 
@@ -1592,8 +1599,12 @@
                         <div class="detail-value">Disponibles con reserva previa</div>
                     </div>
                 </div>
+                <!-- Botón para volver al inicio al final de la página del museo -->
+            <button onclick="showPage('page-inicio')" class="btn btn-secondary btn-return-home">Volver al Inicio</button>
+        </section>
             </div>
         </section>
+        
 
         <!-- ==================== FOOTER ==================== -->
         <footer>
@@ -1603,6 +1614,9 @@
                 <a href="#museo-historia">Historia</a>
                 <a href="#colecciones">Colecciones</a>
                 <button onclick="showPage('page-inicio')">Inicio</button>
+<a href="https://wa.me/3758649299" target="_blank">
+  <button>Contacto</button>
+</a>
                 <a href="https://wa.me/3758502801?text=Me gustaria consultar por sus webs!!!" target="_blank" class="whatsapp-btn" title="Contactar por WhatsApp">💬</a>
             </div>
         </footer>
